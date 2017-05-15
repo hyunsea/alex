@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<style>
+html{
+    font-family:'Arial';
+    
+}
+
+
+p{
+    text-align: center; 
+    color: white;
+    font-weight:bold;
+}
+p.sub{
+    font-family:'Georgia';
+    font-weight:bold;
+    font-size:150%;
+    color: #ffcc99;
+}
+body{
+    background-image:url("bono.jpg");
+    background-size:50% auto;
+}
+ /* The navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+
+/* Links inside the navbar */
+.navbar a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navbar b {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Main content */
+.main {
+    font-size: 110%;
+  padding: 16px;
+  margin-top: 40px;
+  height: 600px; /* Used in this example to enable scrolling */
+}
+.content{
+   
+    text-align: center;
+    width:80%;
+    color:white;
+    font-weight:bold;
+}
+
+.left{
+    float:left;
+    width:200px;
+    padding:14px;
+    margin:0 auto;
+    
+}
+
+.center{
+    position:absolute;
+    left:20%;
+    
+}
+.center2{
+        position:absolute;
+    left:35%;
+    height: 500px;
+    
+}
+
+#out {
+ width: 100%;
+ text-align: center;
+ }
+#in {
+    width :300px;
+ display: inline-block;
+ }
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <font face="Lucida Console">
+  <a href="#contact">Contact</a>
+  <a href="#news">News</a>
+  <a href="/list">Gallery</a>
+  <a href="#home">Home</a>
+  <b href="#title">hyunsea's homepage</b>
+  </font>
+</div>
+
+<div class="main">
+  <div align="center">
+      <font face="Georgia", color="#ffcc99"><b><u><i><h1>This is the page for Hyun-Seo Ahn</h1> </i></u></b></font>
+      <img width="300" src="profile.jpg">
+  </div>
+  <div class="center">
+  <div class="content">
+    
+    Broad research interests of magnetic resonance imaging (MRI) laboratory at 
+    Korea Advanced Institute of Science and Technology (KAIST) lie in (i) unveiling 
+    the inter-regional brain communication mechanism, (ii) developing intraoperative MRI devices, 
+    (iii) applying machine learning algorithms to MRI databases and MRI artifact suppression, and 
+    (iv) developing new MRI techniques of image acquisition, processing, and analysis, These technical 
+    developments can make big differences in understanding baseline and functional brain physiology,
+    and also diagnosis / prognosis / treatment of our body.
+  
+  </div>
+  </div>
+</div>
+<br /><br /><br />
+<div id="out">
+    <p class="sub">I'm Master Candidate student in </p>
+    
+    
+        <ul>
+            <p>2010~2012 : Sejong Science High School</p>
+            <p>2012~2016 : KAIST Dept of Bio and Brain Engineering</p>
+            <p>2016~     : Magnetic Resonance Imaging laboratory at KAIST</p>
+        </ul>
+        
+    <div id="in" style="background-color:white;" >
+        <img height="100", src="logo.png">
+    </div>
+    </p>
+</div>
+<br /><br /><br />
+<div id="out">
+    <div id="in">
+        <p class="sub">I'm major in</p>
+        <img height="200", src="mri.jpg">
+        <p>Magnetic Resonance Imaging</p>
+    </div>
+    <div id="in">
+        <p class="sub">I'm interested in</p>
+        <img height="200", src="cycling.jpg">
+        <p>Cycling</p>
+    </div>
+    <div id="in">
+        <p class="sub">I'm love in</p>
+        <img height="200", src="TWICE.jpg">
+        <p>TWICE</p>
+    </div>
+</div>
+<br /><br /><br />
+<div id="out">
+    <p class="sub"> My recent workout </p>
+    <div display="inline-block">
+        <iframe align="center" height='500' width='50%' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/4917945/activity-summary/a40e4ff0fc9a819ee59c584ab4a02e5be6889d4f'></iframe>
+
+    </div>
+</div>
+
+<div class="container">
+            <form action="/write" method="POST">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">제목</label>
+                    <input type="text" name="title" class="form-control"
+                    id="exampleInputEmail1" placeholder="제목">
+                </div>
+                <label for="exampleInputEmail1">내용</label>
+                <textarea name="content" class="form-control" rows="5" id="commit"></textarea>
+                <br>
+                <button type="submit" class="btn btn-default" style="margintop:
+                20px">전송</button>
+            </form>
+</div>
+
+<div>
+    <% @posts.each do |p| %>
+    <div>
+        <a href = "/show/<%= p.id %>">
+            <%= p.title %>
+        </a>
+    </div>
+    <% end%>
+</div>
+
+</body>
+</html>

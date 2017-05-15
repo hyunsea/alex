@@ -1,0 +1,17 @@
+<div>
+    comments
+    <% @comments.each do |c| %>
+    <div>
+        <%= c.content %>
+        <a href="/comments/delete/<%= c.id %>">[댓글삭제]</a>
+    </div>
+    <% end %>
+</div>
+
+<a href="/home">
+    [뒤로가기]
+</a>
+
+<a href="/delete/<%= @post.id %>">
+    [삭제]
+</a>
